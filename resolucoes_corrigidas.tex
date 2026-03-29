@@ -1,0 +1,269 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\geometry{margin=2.5cm}
+
+\title{\textbf{Lista da 1\textsuperscript{a} Unidade -- Geometria Plana}\\
+\large LMC0007 -- UFRN/CERES/DCEA}
+\author{Resolu\c{c}\~oes (revisadas)}
+\date{2026.1}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section*{Quest\~ao 1}
+\addcontentsline{toc}{section}{Quest\~ao 1}
+
+\textbf{Configura\c{c}\~ao:} Os pontos $A, B, C, D$ est\~ao sobre uma reta, nessa ordem da esquerda para a direita. Usamos a nota\c{c}\~ao: $\overline{AB}$ para o segmento de extremos $A$ e $B$, e $S_{AB}$ para a semirreta de origem $A$ passando por $B$.
+
+\textbf{(a)} $\overline{AB} \cup \overline{BC} = \overline{AC}$.
+
+\textbf{(b)} $\overline{AB} \cap \overline{BC} = \{B\}$.
+
+\textbf{(c)} $\overline{AC} \cap \overline{BD} = \overline{BC}$.
+
+\textbf{(d)} $\overline{AB} \cap \overline{CD} = \emptyset$.
+
+\textbf{(e)} $S_{AB} \cap S_{BC} = S_{BC}$.
+
+\textbf{(f)} $S_{AB} \cap S_{AD} = S_{AB}=S_{AD}$.
+
+\textbf{(g)} $S_{CB} \cap S_{BC} = \overline{BC}$.
+
+\textbf{(h)} $S_{AB} \cup S_{BC} = S_{AB}$.
+
+\section*{Quest\~ao 2}
+\addcontentsline{toc}{section}{Quest\~ao 2}
+
+\textbf{Caso de 3 retas distintas:} os totais possíveis de pontos de interseção são $0,1,2,3$.
+
+\textbf{Caso de 4 retas distintas:} os totais possíveis são $0,1,2,3,4,5,6$.
+
+\section*{Quest\~ao 3}
+\addcontentsline{toc}{section}{Quest\~ao 3}
+
+\textbf{Enunciado:} $S_{AB} \cap S_{BA} = \overline{AB}$.
+
+\begin{proof}
+Sejam coordenadas na reta com $A=a$ e $B=b$, $a<b$. Então
+\[
+S_{AB}=\{X:x\ge a\},\qquad S_{BA}=\{X:x\le b\}.
+\]
+Logo,
+\[
+S_{AB}\cap S_{BA}=\{X:a\le x\le b\}=\overline{AB}.
+\]
+\end{proof}
+
+\section*{Quest\~ao 4}
+\addcontentsline{toc}{section}{Quest\~ao 4}
+
+\textbf{Enunciado:} existe uma infinidade de pontos em um segmento.
+
+\begin{proof}
+Fixe $A=0$, $B=1$. Para cada $n\in\mathbb N$, $n\ge1$, tome $P_n$ com coordenada $x_n=\frac1{n+1}$. Os $P_n$ pertencem a $\overline{AB}$ e são dois a dois distintos. Portanto, há infinitos pontos em $\overline{AB}$.
+\end{proof}
+
+\section*{Quest\~ao 5}
+\addcontentsline{toc}{section}{Quest\~ao 5}
+
+$P=\{a,b,c\}$, $m_1=\{a,b\}$, $m_2=\{a,c\}$, $m_3=\{b,c\}$ satisfaz I2, pois cada par de pontos distintos pertence a exatamente uma dessas três retas.
+
+\section*{Quest\~ao 6}
+\addcontentsline{toc}{section}{Quest\~ao 6}
+
+\textbf{Enunciado:} a interseção de dois semiplanos é convexa.
+
+\begin{proof}
+Se $X,Y\in H_1\cap H_2$, então $\overline{XY}\subset H_1$ e $\overline{XY}\subset H_2$. Logo $\overline{XY}\subset H_1\cap H_2$.
+\end{proof}
+
+\section*{Quest\~ao 7}
+\addcontentsline{toc}{section}{Quest\~ao 7}
+
+Interseção de $n$ semiplanos é convexa, por indução usando a Questão 6 no passo indutivo.
+
+\section*{Quest\~ao 8}
+\addcontentsline{toc}{section}{Quest\~ao 8}
+
+A união de convexos pode não ser convexa: $\{A\}\cup\{B\}$ com $A\ne B$.
+
+\section*{Quest\~ao 9}
+\addcontentsline{toc}{section}{Quest\~ao 9}
+
+Com 4 pontos sem três colineares: $\binom42=6$ retas.
+
+\section*{Quest\~ao 10}
+\addcontentsline{toc}{section}{Quest\~ao 10}
+
+Com 6 pontos sem três colineares: $\binom62=15$ retas.
+
+\section*{Quest\~ao 11}
+\addcontentsline{toc}{section}{Quest\~ao 11}
+
+Com apenas incidência/ordem, a existência de retas paralelas não é decidida; depende do axioma de paralelas adotado.
+
+\section*{Quest\~ao 12}
+\addcontentsline{toc}{section}{Quest\~ao 12}
+
+\textbf{Teorema de Pasch (forma interna).}
+
+\begin{proof}
+Se uma reta $\ell$ corta $\overline{AB}$ em ponto interior e não passa por vértices de $\triangle ABC$, então $A$ e $B$ ficam em semiplanos opostos determinados por $\ell$. Se $C$ está no mesmo semiplano de $A$, então $\overline{BC}$ cruza $\ell$; se $C$ está no mesmo de $B$, então $\overline{AC}$ cruza $\ell$. Assim, $\ell$ intercepta um (e somente um) dos outros dois lados.
+\end{proof}
+
+\section*{Quest\~ao 13}
+\addcontentsline{toc}{section}{Quest\~ao 13}
+
+Máximo para $n$ retas em posição geral: $\binom n2$.
+
+\section*{Quest\~ao 14}
+\addcontentsline{toc}{section}{Quest\~ao 14}
+
+Não existe geometria com 6 pontos, I1, I2 e todas as retas com exatamente 3 pontos: contagem de incidências dá $k=15/6=2{,}5$, impossível.
+
+\section*{Quest\~ao 15}
+\addcontentsline{toc}{section}{Quest\~ao 15}
+
+Se $C\in S_{AB}$ e $C\ne A$, então $S_{AB}=S_{AC}$, $\overline{BC}\subset S_{AB}$ e $A\notin\overline{BC}$.
+
+\section*{Quest\~ao 16}
+\addcontentsline{toc}{section}{Quest\~ao 16}
+
+Interseção arbitrária de convexos é convexa.
+
+\section*{Quest\~ao 17}
+\addcontentsline{toc}{section}{Quest\~ao 17}
+
+\begin{proof}
+O contorno triangular $\partial\triangle ABC=\overline{AB}\cup\overline{BC}\cup\overline{CA}$ é uma curva poligonal simples fechada. Pelo teorema de Jordan (caso poligonal), ele separa o plano em exatamente duas regiões conexas: interior e exterior. O interior pode ser escrito como interseção de três semiplanos apropriados, logo é convexo.
+\end{proof}
+
+\section*{Quest\~ao 18}
+\addcontentsline{toc}{section}{Quest\~ao 18}
+
+Generalizações: $r(n)=\binom n2$ para pontos em posição geral; para polígono convexo, uma reta que não passa por vértices e cruza um lado cruza exatamente mais um lado.
+
+\section*{Quest\~ao 19}
+\addcontentsline{toc}{section}{Quest\~ao 19}
+
+Dois segmentos distintos podem ter interseção com infinitos pontos (por exemplo, um contido no outro), mas não podem ter exatamente dois pontos em comum.
+
+\section*{Quest\~ao 20}
+\addcontentsline{toc}{section}{Quest\~ao 20}
+
+$AB=3$, $AC=2$, $BC=5\Rightarrow AC+AB=BC$, então $A$ está entre $C$ e $B$.
+
+\section*{Quest\~ao 21}
+\addcontentsline{toc}{section}{Quest\~ao 21}
+
+$C$ entre $A$ e $B$, $AB=7$, $AC=5\Rightarrow CB=2$.
+
+\section*{Quest\~ao 22}
+\addcontentsline{toc}{section}{Quest\~ao 22}
+
+A ordenação dos pontos dados na reta está correta em ordem crescente.
+
+\section*{Quest\~ao 23}
+\addcontentsline{toc}{section}{Quest\~ao 23}
+
+$A_1=1$, $A_2=2$, pontos médios sucessivos: $A_3=\frac32$, $A_4=\frac74$, $A_5=\frac{13}{8}$.
+
+\section*{Quest\~ao 24}
+\addcontentsline{toc}{section}{Quest\~ao 24}
+
+Com $\frac ab=\frac cd$ ($b,d\ne0$), seguem as identidades dos itens (a), (b), (c) por manipulação algébrica válida.
+
+\section*{Quest\~ao 25}
+\addcontentsline{toc}{section}{Quest\~ao 25}
+
+Se $P$ está na interseção de círculos de mesmo raio $r$ com centros $A$ e $B$, então $PA=PB=r$.
+
+\section*{Quest\~ao 26}
+\addcontentsline{toc}{section}{Quest\~ao 26}
+
+Construção padrão de triângulo isósceles por interseção de dois arcos de mesmo raio.
+
+\section*{Quest\~ao 27}
+\addcontentsline{toc}{section}{Quest\~ao 27}
+
+Construção padrão de triângulo equilátero sobre segmento dado.
+
+\section*{Quest\~ao 28}
+\addcontentsline{toc}{section}{Quest\~ao 28}
+
+Se $a<b$, então $a<\frac{a+b}{2}<b$.
+
+\section*{Quest\~ao 29}
+\addcontentsline{toc}{section}{Quest\~ao 29}
+
+Lados 3,8,5 não formam triângulo não degenerado, pois $3+5=8$.
+
+\section*{Quest\~ao 30}
+\addcontentsline{toc}{section}{Quest\~ao 30}
+
+Para dois pontos de interseção entre círculos de raios $r_1,r_2$: $|r_1-r_2|<AB<r_1+r_2$.
+
+\section*{Quest\~ao 31}
+\addcontentsline{toc}{section}{Quest\~ao 31}
+
+Se $B,C$ estão no círculo de centro $A$ e raio $r$, então $AB=AC=r$ e $\triangle ABC$ é isósceles.
+
+\section*{Quest\~ao 32}
+\addcontentsline{toc}{section}{Quest\~ao 32}
+
+Se $A$ está no círculo de centro $O$ e $\triangle OAB$ é equilátero, então $OB=OA=r$, logo $B$ também está no círculo.
+
+\section*{Quest\~ao 33}
+\addcontentsline{toc}{section}{Quest\~ao 33}
+
+Para círculos congruentes de centros $A,B$ e interseções $C,D$: $AC=CB=BD=DA=r$, então $ACBD$ é losango; em todo losango, diagonais se bissetam e são perpendiculares.
+
+\section*{Quest\~ao 34}
+\addcontentsline{toc}{section}{Quest\~ao 34}
+
+Existe e é único $C$ entre $A$ e $B$ com $\frac{AC}{BC}=a>0$, dado por $x=\frac{aL}{1+a}$ em coordenadas $A=0,B=L$.
+
+\section*{Quest\~ao 35}
+\addcontentsline{toc}{section}{Quest\~ao 35}
+
+Método de aproximação do comprimento da circunferência por polígonos inscritos: $P_n=2rn\sin(\pi/n)\to2\pi r$.
+
+\section*{Quest\~ao 36}
+\addcontentsline{toc}{section}{Quest\~ao 36}
+
+Segmento entre ponto interno e externo de um círculo intersecta o círculo (continuidade/valor intermediário).
+
+\section*{Quest\~ao 37}
+\addcontentsline{toc}{section}{Quest\~ao 37}
+
+Para elipse $\mathcal E=\{C:CA+CB=r\}$: interior $CA+CB<r$ (convexo e limitado), exterior $CA+CB>r$ (ilimitado, não convexo em geral).
+
+\section*{Quest\~ao 38}
+\addcontentsline{toc}{section}{Quest\~ao 38}
+
+Conjuntos finitos são limitados; segmentos são limitados; triângulo (como união de três segmentos) também é limitado.
+
+\section*{Quest\~ao 39}
+\addcontentsline{toc}{section}{Quest\~ao 39}
+
+União finita de limitados é limitada (prova por majorante comum de distâncias a um ponto fixo).
+
+\section*{Quest\~ao 40}
+\addcontentsline{toc}{section}{Quest\~ao 40}
+
+Dado ponto $P$ e conjunto limitado $M$, existe disco centrado em $P$ contendo $M$.
+
+\section*{Quest\~ao 41}
+\addcontentsline{toc}{section}{Quest\~ao 41}
+
+Retas são ilimitadas: pela régua, há pontos a distância arbitrariamente grande de um ponto fixo na reta.
+
+\end{document}
