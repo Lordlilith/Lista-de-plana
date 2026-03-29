@@ -8,9 +8,11 @@
 \usepackage{array}
 \geometry{margin=2.5cm}
 
+\newtheorem*{provaenv}{Prova}
+
 \title{\textbf{Lista da 1\textsuperscript{a} Unidade -- Geometria Plana}\\
 \large LMC0007 -- UFRN/CERES/DCEA}
-\author{Resolu\c{c}\~oes (revisadas)}
+\author{Resolu\c{c}\~oes}
 \date{2026.1}
 
 \begin{document}
@@ -18,252 +20,715 @@
 \tableofcontents
 \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 1}
 \addcontentsline{toc}{section}{Quest\~ao 1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \textbf{Configura\c{c}\~ao:} Os pontos $A, B, C, D$ est\~ao sobre uma reta, nessa ordem da esquerda para a direita. Usamos a nota\c{c}\~ao: $\overline{AB}$ para o segmento de extremos $A$ e $B$, e $S_{AB}$ para a semirreta de origem $A$ passando por $B$.
 
-\textbf{(a)} $\overline{AB} \cup \overline{BC} = \overline{AC}$.
+\bigskip
+\textbf{(a)} $\overline{AB} \cup \overline{BC}$
 
-\textbf{(b)} $\overline{AB} \cap \overline{BC} = \{B\}$.
+Como $B$ est\'a entre $A$ e $C$, todo ponto de $\overline{AB}$ ou de $\overline{BC}$ satisfaz $A \leq X \leq C$. Logo:
+$$\overline{AB} \cup \overline{BC} = \overline{AC}$$
 
-\textbf{(c)} $\overline{AC} \cap \overline{BD} = \overline{BC}$.
+\textbf{(b)} $\overline{AB} \cap \overline{BC}$
 
-\textbf{(d)} $\overline{AB} \cap \overline{CD} = \emptyset$.
+$\overline{AB}$: $A \leq X \leq B$; $\overline{BC}$: $B \leq X \leq C$. O \'unico valor satisfazendo $X \leq B$ e $X \geq B$ \'e $X = B$. Logo:
+$$\overline{AB} \cap \overline{BC} = \{B\}$$
 
-\textbf{(e)} $S_{AB} \cap S_{BC} = S_{BC}$.
+\textbf{(c)} $\overline{AC} \cap \overline{BD}$
 
-\textbf{(f)} $S_{AB} \cap S_{AD} = S_{AB}=S_{AD}$.
+$\overline{AC}$: $A \leq X \leq C$; $\overline{BD}$: $B \leq X \leq D$. A interse\c{c}\~ao exige $B \leq X \leq C$. Logo:
+$$\overline{AC} \cap \overline{BD} = \overline{BC}$$
 
-\textbf{(g)} $S_{CB} \cap S_{BC} = \overline{BC}$.
+\textbf{(d)} $\overline{AB} \cap \overline{CD}$
 
-\textbf{(h)} $S_{AB} \cup S_{BC} = S_{AB}$.
+$\overline{AB}$: $A \leq X \leq B$; $\overline{CD}$: $C \leq X \leq D$. Como $B < C$, n\~ao existe $X$ satisfazendo ambas simultaneamente. Logo:
+$$\overline{AB} \cap \overline{CD} = \emptyset$$
 
+\textbf{(e)} $S_{AB} \cap S_{BC}$
+
+$S_{AB}$: todos os $X \geq A$; $S_{BC}$: todos os $X \geq B$. Como $A < B$, temos $S_{BC} \subset S_{AB}$. Logo:
+$$S_{AB} \cap S_{BC} = S_{BC}$$
+
+\textbf{(f)} $S_{AB} \cap S_{AD}$
+
+Ambas as semirretas t\^em origem $A$ e o mesmo sentido (para a direita), portanto s\~ao id\^enticas:
+$$S_{AB} \cap S_{AD} = S_{AB} = S_{AD}$$
+
+\textbf{(g)} $S_{CB} \cap S_{BC}$
+
+$S_{CB}$: todos os $X \leq C$; $S_{BC}$: todos os $X \geq B$. A interse\c{c}\~ao exige $B \leq X \leq C$. Logo:
+$$S_{CB} \cap S_{BC} = \overline{BC}$$
+
+\textbf{(h)} $S_{AB} \cup S_{BC}$
+
+$S_{AB}$: todos os $X \geq A$; $S_{BC}$: todos os $X \geq B$. Como $S_{BC} \subset S_{AB}$:
+$$S_{AB} \cup S_{BC} = S_{AB}$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 2}
 \addcontentsline{toc}{section}{Quest\~ao 2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{Caso de 3 retas distintas:} os totais possíveis de pontos de interseção são $0,1,2,3$.
+\textbf{Caso de 3 retas:} H\'a $\binom{3}{2} = 3$ pares. Os casos poss\'iveis s\~ao:
 
-\textbf{Caso de 4 retas distintas:} os totais possíveis são $0,1,2,3,4,5,6$.
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+Configura\c{c}\~ao & N\textsuperscript{o} de pontos \\
+\midrule
+Todas paralelas & 0 \\
+Todas concorrentes & 1 \\
+Duas paralelas, uma transversal & 2 \\
+Nenhuma paralela, sem ponto triplo & 3 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
+O n\'umero de pontos de interse\c{c}\~ao para 3 retas pode ser $\mathbf{0, 1, 2}$ ou $\mathbf{3}$.
+
+\textbf{Caso de 4 retas:} H\'a $\binom{4}{2} = 6$ pares, logo o m\'aximo \'e 6 pontos. Os valores poss\'iveis v\~ao de $0$ a $6$:
+
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+Configura\c{c}\~ao & N\textsuperscript{o} de pontos \\
+\midrule
+Todas paralelas & 0 \\
+Todas concorrentes & 1 \\
+Posi\c{c}\~ao geral & 6 \\
+Configura\c{c}\~oes mistas & 2, 3, 4, 5 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+O n\'umero de pontos para 4 retas pode ser $\mathbf{0, 1, 2, 3, 4, 5}$ ou $\mathbf{6}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 3}
 \addcontentsline{toc}{section}{Quest\~ao 3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{Enunciado:} $S_{AB} \cap S_{BA} = \overline{AB}$.
+\textbf{Enunciado (item (b) da Proposi\c{c}\~ao 1.4):} $S_{AB} \cap S_{BA} = \overline{AB}$.
 
 \begin{proof}
-Sejam coordenadas na reta com $A=a$ e $B=b$, $a<b$. Então
-\[
-S_{AB}=\{X:x\ge a\},\qquad S_{BA}=\{X:x\le b\}.
-\]
-Logo,
-\[
-S_{AB}\cap S_{BA}=\{X:a\le x\le b\}=\overline{AB}.
-\]
+Seja $r$ a reta com coordenadas tais que $A$ tem coordenada $a$ e $B$ tem coordenada $b$, com $a < b$. Por defini\c{c}\~ao:
+$$S_{AB} = \{X \in r : x \geq a\}, \qquad S_{BA} = \{X \in r : x \leq b\}$$
+
+$(\subseteq)$: Se $X \in S_{AB} \cap S_{BA}$, ent\~ao $x \geq a$ e $x \leq b$, logo $a \leq x \leq b$, portanto $X \in \overline{AB}$.
+
+$(\supseteq)$: Se $X \in \overline{AB}$, ent\~ao $a \leq x \leq b$, logo $X \in S_{AB}$ e $X \in S_{BA}$, portanto $X \in S_{AB} \cap S_{BA}$.
+
+Conclu\'imos que $S_{AB} \cap S_{BA} = \overline{AB}$.
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 4}
 \addcontentsline{toc}{section}{Quest\~ao 4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{Enunciado:} existe uma infinidade de pontos em um segmento.
+\textbf{Enunciado:} Prove que existe uma infinidade de pontos em um segmento.
 
 \begin{proof}
-Fixe $A=0$, $B=1$. Para cada $n\in\mathbb N$, $n\ge1$, tome $P_n$ com coordenada $x_n=\frac1{n+1}$. Os $P_n$ pertencem a $\overline{AB}$ e são dois a dois distintos. Portanto, há infinitos pontos em $\overline{AB}$.
+Seja $\overline{AB}$ com $A \neq B$. Fixemos coordenadas tal que $A = 0$ e $B = 1$ (Axioma da R\'egua). Para cada $n \in \mathbb{N}$, $n \geq 1$, seja $P_n$ o ponto de coordenada
+$$x_n = \frac{1}{n+1}$$
+Como $x_n \in (0,1)$, cada $P_n \in \overline{AB}$. Al\'em disso, se $P_m = P_n$ ent\~ao $\frac{1}{m+1} = \frac{1}{n+1}$, logo $m = n$. Portanto os pontos $P_n$ s\~ao dois a dois distintos, e $\overline{AB}$ cont\'em infinitos pontos.
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 5}
 \addcontentsline{toc}{section}{Quest\~ao 5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-$P=\{a,b,c\}$, $m_1=\{a,b\}$, $m_2=\{a,c\}$, $m_3=\{b,c\}$ satisfaz I2, pois cada par de pontos distintos pertence a exatamente uma dessas três retas.
+\textbf{Enunciado:} Verificar que $P = \{a,b,c\}$, $m_1 = \{a,b\}$, $m_2 = \{a,c\}$, $m_3 = \{b,c\}$ satisfaz o Axioma I2.
 
+O \textbf{Axioma I2} afirma: dois pontos distintos quaisquer determinam uma \'unica reta. Verificamos todos os pares:
+
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+Par & Reta que os cont\'em & \'Unica? \\
+\midrule
+$\{a,b\}$ & $m_1$ & Sim \\
+$\{a,c\}$ & $m_2$ & Sim \\
+$\{b,c\}$ & $m_3$ & Sim \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Em todos os casos existe exatamente uma reta contendo o par. O \textbf{Axioma I2 \'e satisfeito}. $\blacksquare$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 6}
 \addcontentsline{toc}{section}{Quest\~ao 6}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{Enunciado:} a interseção de dois semiplanos é convexa.
+\textbf{Enunciado:} Mostre que a interse\c{c}\~ao de dois semiplanos \'e convexa.
 
 \begin{proof}
-Se $X,Y\in H_1\cap H_2$, então $\overline{XY}\subset H_1$ e $\overline{XY}\subset H_2$. Logo $\overline{XY}\subset H_1\cap H_2$.
+Sejam $H_1$ e $H_2$ dois semiplanos e $K = H_1 \cap H_2$. Tomemos $X, Y \in K$ quaisquer. Como $X, Y \in H_1$ e $H_1$ \'e convexo:
+$$\overline{XY} \subset H_1$$
+Como $X, Y \in H_2$ e $H_2$ \'e convexo:
+$$\overline{XY} \subset H_2$$
+Portanto $\overline{XY} \subset H_1 \cap H_2 = K$. Como $X$ e $Y$ foram arbitr\'arios, $K$ \'e convexo.
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 7}
 \addcontentsline{toc}{section}{Quest\~ao 7}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Interseção de $n$ semiplanos é convexa, por indução usando a Questão 6 no passo indutivo.
+\textbf{Enunciado:} Mostre que a interse\c{c}\~ao de $n$ semiplanos \'e convexa.
 
+\begin{proof}
+Por indu\c{c}\~ao sobre $n$.
+
+\textbf{Base ($n=1$):} Um semiplano \'e convexo por hip\'otese.
+
+\textbf{Passo indutivo:} Suponha que a interse\c{c}\~ao de quaisquer $n-1$ semiplanos seja convexa. Dados $H_1, \ldots, H_n$, seja $K_{n-1} = H_1 \cap \cdots \cap H_{n-1}$, que \'e convexo pela hip\'otese de indu\c{c}\~ao. Ent\~ao
+$$\bigcap_{i=1}^n H_i = K_{n-1} \cap H_n$$
+\'e a interse\c{c}\~ao de dois convexos, que \'e convexa pela Quest\~ao 6. Por indu\c{c}\~ao, o resultado vale para todo $n \geq 1$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 8}
 \addcontentsline{toc}{section}{Quest\~ao 8}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A união de convexos pode não ser convexa: $\{A\}\cup\{B\}$ com $A\ne B$.
+\textbf{Enunciado:} Mostre, com contraexemplo, que a uni\~ao de convexos pode n\~ao ser convexa.
 
+\textbf{Contraexemplo:} Sejam $A$ e $B$ dois pontos distintos. Os conjuntos unit\'arios $K_1 = \{A\}$ e $K_2 = \{B\}$ s\~ao trivialmente convexos. Por\'em $K = K_1 \cup K_2 = \{A, B\}$ n\~ao \'e convexo, pois o segmento $\overline{AB}$ cont\'em infinitos pontos (Quest\~ao 4) que n\~ao pertencem a $K$. $\blacksquare$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 9}
 \addcontentsline{toc}{section}{Quest\~ao 9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Com 4 pontos sem três colineares: $\binom42=6$ retas.
+\textbf{Enunciado:} Quantas retas s\~ao determinadas por 4 pontos sendo que quaisquer tr\^es s\~ao n\~ao colineares?
 
+Pelo Axioma I2, cada par de pontos determina uma reta distinta (em posi\c{c}\~ao geral). O n\'umero de pares \'e:
+$$\binom{4}{2} = \frac{4!}{2!\cdot 2!} = \boxed{6 \text{ retas}}$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 10}
 \addcontentsline{toc}{section}{Quest\~ao 10}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Com 6 pontos sem três colineares: $\binom62=15$ retas.
+\textbf{Enunciado:} Repita o exerc\'icio anterior para 6 pontos.
 
+$$\binom{6}{2} = \frac{6 \times 5}{2} = \boxed{15 \text{ retas}}$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 11}
 \addcontentsline{toc}{section}{Quest\~ao 11}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Com apenas incidência/ordem, a existência de retas paralelas não é decidida; depende do axioma de paralelas adotado.
+\textbf{Enunciado:} Existem retas que n\~ao se interceptam?
 
+Com apenas os axiomas de incid\^encia e ordem dispon\'iveis at\'e o momento das notas, os axiomas garantem que duas retas distintas num plano ou possuem exatamente um ponto em comum ou nenhum. Os axiomas b\'asicos n\~ao excluem a exist\^encia de retas sem ponto comum, mas tampouco a garantem. A quest\~ao permanece em aberto at\'e a introdu\c{c}\~ao de um axioma adicional (como o Axioma das Paralelas). $\blacksquare$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 12}
 \addcontentsline{toc}{section}{Quest\~ao 12}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{Teorema de Pasch (forma interna).}
+\textbf{Enunciado:} Prove que, se uma reta intercepta um lado de um tri\^angulo e n\~ao passa por nenhum v\'ertice, ent\~ao ela intercepta tamb\'em um dos outros dois lados. (\textbf{Teorema de Pasch})
 
 \begin{proof}
-Se uma reta $\ell$ corta $\overline{AB}$ em ponto interior e não passa por vértices de $\triangle ABC$, então $A$ e $B$ ficam em semiplanos opostos determinados por $\ell$. Se $C$ está no mesmo semiplano de $A$, então $\overline{BC}$ cruza $\ell$; se $C$ está no mesmo de $B$, então $\overline{AC}$ cruza $\ell$. Assim, $\ell$ intercepta um (e somente um) dos outros dois lados.
+Sejam $A$, $B$, $C$ os v\'ertices de $\triangle ABC$ e $\ell$ uma reta que intercepta $\overline{AB}$ em $P$ (com $P \neq A$, $P \neq B$) sem passar por nenhum v\'ertice.
+
+A reta $\ell$ divide o plano em dois semiplanos $H^+$ e $H^-$. Como $P \in \overline{AB} \cap \ell$, os pontos $A$ e $B$ est\~ao em semiplanos opostos:
+$$A \in H^+, \quad B \in H^-$$
+
+Como $\ell$ n\~ao passa por $C$, temos dois casos:
+
+\textbf{Caso 1: $C \in H^+$.} Ent\~ao $A, C \in H^+$, logo $\overline{AC}$ n\~ao cruza $\ell$. Como $B \in H^-$ e $C \in H^+$, o segmento $\overline{BC}$ cruza $\ell$, interceptando o lado $\overline{BC}$.
+
+\textbf{Caso 2: $C \in H^-.$.} Ent\~ao $B, C \in H^-$, logo $\overline{BC}$ n\~ao cruza $\ell$. Como $A \in H^+$ e $C \in H^-$, o segmento $\overline{AC}$ cruza $\ell$, interceptando o lado $\overline{AC}$.
+
+Em ambos os casos, $\ell$ intercepta exatamente um dos outros dois lados.
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 13}
 \addcontentsline{toc}{section}{Quest\~ao 13}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Máximo para $n$ retas em posição geral: $\binom n2$.
+\textbf{Caso de 5 retas:} M\'aximo $= \binom{5}{2} = 10$ pontos. Valores poss\'iveis: de $0$ a $10$.
 
+\textbf{Caso de 6 retas:} M\'aximo $= \binom{6}{2} = 15$ pontos. Valores poss\'iveis: de $0$ a $15$.
+
+\textbf{Conjectura para $n$ retas:} O n\'umero m\'aximo de pontos de interse\c{c}\~ao \'e:
+$$\boxed{M(n) = \binom{n}{2} = \frac{n(n-1)}{2}}$$
+atingido quando nenhum par de retas \'e paralelo e nenhum triplo \'e concorrente (posi\c{c}\~ao geral).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 14}
 \addcontentsline{toc}{section}{Quest\~ao 14}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Não existe geometria com 6 pontos, I1, I2 e todas as retas com exatamente 3 pontos: contagem de incidências dá $k=15/6=2{,}5$, impossível.
-
-\section*{Quest\~ao 15}
-\addcontentsline{toc}{section}{Quest\~ao 15}
-
-Se $C\in S_{AB}$ e $C\ne A$, então $S_{AB}=S_{AC}$, $\overline{BC}\subset S_{AB}$ e $A\notin\overline{BC}$.
-
-\section*{Quest\~ao 16}
-\addcontentsline{toc}{section}{Quest\~ao 16}
-
-Interseção arbitrária de convexos é convexa.
-
-\section*{Quest\~ao 17}
-\addcontentsline{toc}{section}{Quest\~ao 17}
+\textbf{Enunciado:} Mostre que n\~ao existe geometria com 6 pontos em que valem I1, I2 e todas as retas t\^em exatamente 3 pontos.
 
 \begin{proof}
-O contorno triangular $\partial\triangle ABC=\overline{AB}\cup\overline{BC}\cup\overline{CA}$ é uma curva poligonal simples fechada. Pelo teorema de Jordan (caso poligonal), ele separa o plano em exatamente duas regiões conexas: interior e exterior. O interior pode ser escrito como interseção de três semiplanos apropriados, logo é convexo.
+Suponha por contradi\c{c}\~ao que tal geometria exista. Pelo Axioma I2, cada par de pontos determina uma reta. Como cada reta cont\'em $\binom{3}{2} = 3$ pares, e o total de pares \'e $\binom{6}{2} = 15$, o n\'umero de retas seria:
+$$r = \frac{15}{3} = 5$$
+
+O n\'umero total de incid\^encias (pares ponto-reta) \'e $5 \times 3 = 15$. Dividindo pelos 6 pontos, cada ponto pertenceria a:
+$$k = \frac{15}{6} = 2{,}5$$
+retas. Como $k$ n\~ao \'e inteiro, temos uma contradi\c{c}\~ao. Logo, tal geometria n\~ao existe.
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Quest\~ao 15}
+\addcontentsline{toc}{section}{Quest\~ao 15}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Enunciado:} Se $C \in S_{AB}$ e $C \neq A$, mostre que $S_{AB} = S_{AC}$, que $\overline{BC} \subset S_{AB}$ e que $A \notin \overline{BC}$.
+
+\textbf{Configura\c{c}\~ao:} Coordenadas com $A = 0$, $B = b > 0$, $C = c > 0$ (pois $C \in S_{AB}$ e $C \neq A$).
+
+\begin{proof}[Prova de $S_{AB} = S_{AC}$]
+$S_{AB} = \{X : x \geq 0\}$ e $S_{AC} = \{X : x \geq 0\}$, pois ambas t\^em origem $A = 0$ e sentido positivo ($b > 0$, $c > 0$). Logo $S_{AB} = S_{AC}$.
+\end{proof}
+
+\begin{proof}[Prova de $\overline{BC} \subset S_{AB}$]
+Todo $X \in \overline{BC}$ tem coordenada $x \geq \min(b,c) > 0$, logo $x \geq 0$, portanto $X \in S_{AB}$.
+\end{proof}
+
+\begin{proof}[Prova de $A \notin \overline{BC}$]
+$A$ tem coordenada $0$, e todo $X \in \overline{BC}$ satisfaz $x \geq \min(b,c) > 0$. Logo $A \notin \overline{BC}$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Quest\~ao 16}
+\addcontentsline{toc}{section}{Quest\~ao 16}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Enunciado:} Demonstre que a interse\c{c}\~ao de convexos \'e convexa.
+
+\begin{proof}
+Seja $\{K_\lambda\}_{\lambda \in \Lambda}$ uma fam\'ilia de conjuntos convexos e $K = \bigcap_{\lambda \in \Lambda} K_\lambda$. Tomemos $X, Y \in K$ quaisquer. Para cada $\lambda$, $X, Y \in K_\lambda$, e como $K_\lambda$ \'e convexo:
+$$\overline{XY} \subset K_\lambda$$
+Como isso vale para todo $\lambda$, temos $\overline{XY} \subset \bigcap_\lambda K_\lambda = K$. Logo $K$ \'e convexo.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Quest\~ao 17}
+\addcontentsline{toc}{section}{Quest\~ao 17}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Enunciado:} Mostre que um tri\^angulo separa o plano em duas regi\~oes, uma das quais \'e convexa.
+
+\begin{proof}
+Seja $\triangle ABC$ com v\'ertices n\~ao colineares. Cada lado pertence a uma reta que divide o plano em dois semiplanos abertos. Denote:
+\begin{align*}
+H_{AB}^+ &= \text{semiplano determinado por } \ell_{AB} \text{ que cont\'em } C\\
+H_{BC}^+ &= \text{semiplano determinado por } \ell_{BC} \text{ que cont\'em } A\\
+H_{CA}^+ &= \text{semiplano determinado por } \ell_{CA} \text{ que cont\'em } B
+\end{align*}
+
+O interior do tri\^angulo \'e:
+$$\mathrm{Int}(\triangle ABC) = H_{AB}^+ \cap H_{BC}^+ \cap H_{CA}^+$$
+
+Pela Quest\~ao 7, interse\c{c}\~ao de semiplanos \'e convexa. Logo o interior \'e convexo. Pelo Teorema da Curva de Jordan (caso poligonal), o complementar do tri\^angulo \'e composto por duas regi\~oes: o interior (convexo) e o exterior (ilimitado, n\~ao convexo em geral).
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 18}
 \addcontentsline{toc}{section}{Quest\~ao 18}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Generalizações: $r(n)=\binom n2$ para pontos em posição geral; para polígono convexo, uma reta que não passa por vértices e cruza um lado cruza exatamente mais um lado.
+\textbf{Generaliza\c{c}\~ao do Exerc\'icio 9} (n\'umero de retas por $n$ pontos em posi\c{c}\~ao geral):
+$$r(n) = \binom{n}{2} = \frac{n(n-1)}{2}$$
 
+\textbf{Generaliza\c{c}\~ao do Exerc\'icio 12} (Pasch para pol\'igonos convexos de $n$ lados):
+
+Se uma reta $\ell$ n\~ao passa por nenhum v\'ertice de um pol\'igono convexo de $n$ lados e intercepta um dos seus lados, ent\~ao ela intercepta exatamente outro lado.
+
+\begin{proof}
+A reta $\ell$ divide o plano em $H^+$ e $H^-$. Os $n$ v\'ertices (nenhum sobre $\ell$) est\~ao distribu\'idos entre os dois semiplanos. Ao percorrer os v\'ertices em ordem, cada travessia de semiplano corresponde a um lado que cruza $\ell$. O n\'umero de travessias \'e par (pois retornamos ao semiplano inicial). Como h\'a pelo menos uma travessia, h\'a pelo menos duas. No caso convexo, o n\'umero \'e exatamente $\mathbf{2}$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 19}
 \addcontentsline{toc}{section}{Quest\~ao 19}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Dois segmentos distintos podem ter interseção com infinitos pontos (por exemplo, um contido no outro), mas não podem ter exatamente dois pontos em comum.
+\textbf{Parte 1:} Dois segmentos distintos podem ter dois (ou mais) pontos em comum. Exemplo: $\overline{AB} \subset \overline{AC}$ com $B$ entre $A$ e $C$ — a interse\c{c}\~ao \'e $\overline{AB}$, que cont\'em infinitos pontos.
 
+\textbf{Parte 2:} Dois segmentos distintos \textbf{n\~ao podem} ter exatamente dois pontos em comum.
+
+\begin{proof}
+Suponha que $\overline{PQ}$ e $\overline{RS}$ sejam distintos com $X \neq Y$ em comum. Pelo Axioma I2, ambos est\~ao na reta determinada por $X$ e $Y$, logo s\~ao colineares. Como $\overline{XY} \subset \overline{PQ}$ e $\overline{XY} \subset \overline{RS}$ (por convexidade), a interse\c{c}\~ao cont\'em todos os infinitos pontos de $\overline{XY}$. Logo a interse\c{c}\~ao nunca pode ser exatamente dois pontos.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 20}
 \addcontentsline{toc}{section}{Quest\~ao 20}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-$AB=3$, $AC=2$, $BC=5\Rightarrow AC+AB=BC$, então $A$ está entre $C$ e $B$.
+\textbf{Dados:} $AB = 3$, $AC = 2$, $BC = 5$.
 
+\textbf{An\'alise:} $AC + AB = 2 + 3 = 5 = BC$, logo $A$ est\'a entre $C$ e $B$.
+
+\textbf{Configura\c{c}\~ao:} $C = 0$, $A = 2$, $B = 5$.
+
+$$C \;{-}{-}{-}\; A \;{-}{-}{-}\; B$$
+$$\underbrace{\hspace{1.5cm}}_{AC=2}\underbrace{\hspace{1.8cm}}_{AB=3}$$
+$$\underbrace{\hspace{3.5cm}}_{BC=5}$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 21}
 \addcontentsline{toc}{section}{Quest\~ao 21}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-$C$ entre $A$ e $B$, $AB=7$, $AC=5\Rightarrow CB=2$.
+\textbf{Dados:} $C$ entre $A$ e $B$, $AB = 7$, $AC = 5$.
 
+Pelo Axioma da Aditividade:
+$$AC + CB = AB \implies 5 + CB = 7 \implies CB = 2$$
+
+\textbf{Configura\c{c}\~ao:} $A = 0$, $C = 5$, $B = 7$.
+
+$$A \;{-}{-}{-}{-}{-}\; C \;{-}{-}\; B$$
+$$\underbrace{\hspace{2.8cm}}_{AC=5}\underbrace{\hspace{1.2cm}}_{CB=2}$$
+$$\underbrace{\hspace{4.2cm}}_{AB=7}$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 22}
 \addcontentsline{toc}{section}{Quest\~ao 22}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A ordenação dos pontos dados na reta está correta em ordem crescente.
+\textbf{Enunciado:} Reta com $A = 0$ e $B = 1$. Marcar os pontos de coordenadas:
+$$3,\ 5,\ \tfrac{5}{2},\ \tfrac{1}{3},\ \tfrac{3}{2},\ 2,\ -1,\ -2,\ -5,\ -\tfrac{1}{3},\ -\tfrac{5}{3}$$
 
+Ordenando em ordem crescente:
+$$-5,\; -2,\; -\tfrac{5}{3},\; -1,\; -\tfrac{1}{3},\; \underset{A}{0},\; \tfrac{1}{3},\; \underset{B}{1},\; \tfrac{3}{2},\; 2,\; \tfrac{5}{2},\; 3,\; 5$$
+
+Representa\c{c}\~ao esquem\'atica:
+$$\longleftarrow\; \underset{-5}{\bullet}\;\underset{-2}{\bullet}\;\underset{-\frac{5}{3}}{\bullet}\;\underset{-1}{\bullet}\;\underset{-\frac{1}{3}}{\bullet}\;\underset{0}{\overset{A}{\bullet}}\;\underset{\frac{1}{3}}{\bullet}\;\underset{1}{\overset{B}{\bullet}}\;\underset{\frac{3}{2}}{\bullet}\;\underset{2}{\bullet}\;\underset{\frac{5}{2}}{\bullet}\;\underset{3}{\bullet}\;\underset{5}{\bullet}\;\longrightarrow$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 23}
 \addcontentsline{toc}{section}{Quest\~ao 23}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-$A_1=1$, $A_2=2$, pontos médios sucessivos: $A_3=\frac32$, $A_4=\frac74$, $A_5=\frac{13}{8}$.
+\textbf{Dados:} $A_1 = 1$, $A_2 = 2$. Ponto m\'edio: $M = \dfrac{p+q}{2}$.
 
+\begin{align*}
+A_3 &= \frac{A_1 + A_2}{2} = \frac{1+2}{2} = \frac{3}{2}\\[6pt]
+A_4 &= \frac{A_2 + A_3}{2} = \frac{2 + \frac{3}{2}}{2} = \frac{\frac{7}{2}}{2} = \frac{7}{4}\\[6pt]
+A_5 &= \frac{A_3 + A_4}{2} = \frac{\frac{3}{2} + \frac{7}{4}}{2} = \frac{\frac{13}{4}}{2} = \frac{13}{8}
+\end{align*}
+
+$$\boxed{A_3 = \frac{3}{2},\qquad A_4 = \frac{7}{4},\qquad A_5 = \frac{13}{8}}$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 24}
 \addcontentsline{toc}{section}{Quest\~ao 24}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Com $\frac ab=\frac cd$ ($b,d\ne0$), seguem as identidades dos itens (a), (b), (c) por manipulação algébrica válida.
+\textbf{Hip\'otese:} $\dfrac{a}{b} = \dfrac{c}{d}$, equivalente a $ad = bc$. Seja $k = \dfrac{a}{b} = \dfrac{c}{d}$, logo $a = kb$ e $c = kd$.
 
+\textbf{(a)} $\dfrac{a}{c} = \dfrac{b}{d}$: de $ad = bc$, dividindo por $cd$:
+$$\frac{a}{c} = \frac{b}{d} \qquad \blacksquare$$
+
+\textbf{(b)} $\dfrac{a+b}{a} = \dfrac{c+d}{c}$ e $\dfrac{a-b}{a} = \dfrac{c-d}{c}$:
+$$\frac{a+b}{a} = \frac{kb+b}{kb} = \frac{k+1}{k} = \frac{kd+d}{kd} = \frac{c+d}{c} \qquad \blacksquare$$
+$$\frac{a-b}{a} = \frac{kb-b}{kb} = \frac{k-1}{k} = \frac{kd-d}{kd} = \frac{c-d}{c} \qquad \blacksquare$$
+
+\textbf{(c)} $\dfrac{a+b}{b} = \dfrac{c+d}{d}$ e $\dfrac{a-b}{b} = \dfrac{c-d}{d}$:
+$$\frac{a+b}{b} = \frac{kb+b}{b} = k+1 = \frac{kd+d}{d} = \frac{c+d}{d} \qquad \blacksquare$$
+$$\frac{a-b}{b} = \frac{kb-b}{b} = k-1 = \frac{kd-d}{d} = \frac{c-d}{d} \qquad \blacksquare$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 25}
 \addcontentsline{toc}{section}{Quest\~ao 25}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Se $P$ está na interseção de círculos de mesmo raio $r$ com centros $A$ e $B$, então $PA=PB=r$.
+\textbf{Enunciado:} Se $P$ \'e ponto de interse\c{c}\~ao de c\'irculos de raio $r$ e centros $A$ e $B$, mostre que $PA = PB$.
 
+\begin{proof}
+$P$ pertence ao c\'irculo de centro $A$ e raio $r$, logo $m(PA) = r$. $P$ pertence ao c\'irculo de centro $B$ e raio $r$, logo $m(PB) = r$. Portanto:
+$$m(PA) = r = m(PB) \implies PA = PB \qquad \blacksquare$$
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 26}
 \addcontentsline{toc}{section}{Quest\~ao 26}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Construção padrão de triângulo isósceles por interseção de dois arcos de mesmo raio.
+\textbf{Constru\c{c}\~ao de tri\^angulo isc\'osceles com r\'egua e compasso:}
 
+\begin{enumerate}
+\item Trace um segmento $\overline{AB}$ (base do tri\^angulo).
+\item Escolha um raio $r > \dfrac{m(AB)}{2}$.
+\item Com centro em $A$, trace um arco de raio $r$.
+\item Com centro em $B$, trace um arco do \textbf{mesmo raio} $r$.
+\item Chame de $C$ um dos pontos de interse\c{c}\~ao dos arcos.
+\item Una $A$ a $C$ e $B$ a $C$ com a r\'egua.
+\end{enumerate}
+
+\textbf{Verifica\c{c}\~ao:} Por constru\c{c}\~ao, $m(CA) = r = m(CB)$, logo $\triangle ABC$ \'e isc\'osceles. $\blacksquare$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 27}
 \addcontentsline{toc}{section}{Quest\~ao 27}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Construção padrão de triângulo equilátero sobre segmento dado.
+\textbf{Constru\c{c}\~ao de tri\^angulo equil\'atero com r\'egua e compasso:}
 
+\begin{enumerate}
+\item Trace um segmento $\overline{AB}$ com comprimento $\ell$.
+\item Com centro em $A$ e raio $\ell$, trace um arco.
+\item Com centro em $B$ e raio $\ell$, trace outro arco.
+\item Chame de $C$ um dos pontos de interse\c{c}\~ao.
+\item Una $A$ a $C$ e $B$ a $C$.
+\end{enumerate}
+
+\textbf{Verifica\c{c}\~ao:} $m(CA) = m(CB) = m(AB) = \ell$. Logo $\triangle ABC$ \'e equil\'atero. (Proposi\c{c}\~ao I.1 de Euclides.) $\blacksquare$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 28}
 \addcontentsline{toc}{section}{Quest\~ao 28}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Se $a<b$, então $a<\frac{a+b}{2}<b$.
+\textbf{Enunciado:} Se $a < b$, mostre que $a < \dfrac{a+b}{2} < b$.
 
+\begin{proof}
+Como $a < b$, somando $a$ a ambos os lados: $2a < a+b$, logo $a < \dfrac{a+b}{2}$.
+
+Como $a < b$, somando $b$ a ambos os lados: $a+b < 2b$, logo $\dfrac{a+b}{2} < b$.
+
+Portanto $a < \dfrac{a+b}{2} < b$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 29}
 \addcontentsline{toc}{section}{Quest\~ao 29}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Lados 3,8,5 não formam triângulo não degenerado, pois $3+5=8$.
+\textbf{Enunciado:} \'E poss\'ivel desenhar um tri\^angulo com lados $3$, $8$ e $5$?
 
+Verificamos a Desigualdade Triangular:
+$$3 + 8 = 11 > 5 \checkmark$$
+$$3 + 5 = 8 \not> 8 \quad \times$$
+$$8 + 5 = 13 > 3 \checkmark$$
+
+A segunda condi\c{c}\~ao falha: $3 + 5 = 8$, os tr\^es pontos seriam colineares.
+
+$$\boxed{\text{N\~ao \'e poss\'ivel. O ``tri\^angulo'' seria degenerado (colinear), pois } 3 + 5 = 8.}$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 30}
 \addcontentsline{toc}{section}{Quest\~ao 30}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Para dois pontos de interseção entre círculos de raios $r_1,r_2$: $|r_1-r_2|<AB<r_1+r_2$.
+\textbf{Enunciado:} O c\'irculo de raio $r_1$ centrado em $A$ intercepta o c\'irculo de raio $r_2$ centrado em $B$ em exatamente dois pontos. O que se pode afirmar sobre $AB$?
 
+Para que dois c\'irculos se intersectem em exatamente dois pontos, a dist\^ancia entre os centros deve satisfazer:
+$$|r_1 - r_2| < m(AB) < r_1 + r_2$$
+
+\textbf{Justificativa:}
+\begin{itemize}
+  \item Se $m(AB) = r_1 + r_2$: tangentes externamente (1 ponto).
+  \item Se $m(AB) > r_1 + r_2$: disjuntos (0 pontos).
+  \item Se $m(AB) = |r_1 - r_2|$: tangentes internamente (1 ponto).
+  \item Se $m(AB) < |r_1 - r_2|$: um dentro do outro (0 pontos).
+  \item Se $|r_1 - r_2| < m(AB) < r_1 + r_2$: exatamente 2 pontos. $\checkmark$
+\end{itemize}
+
+$$\boxed{|r_1 - r_2| < m(AB) < r_1 + r_2}$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 31}
 \addcontentsline{toc}{section}{Quest\~ao 31}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Se $B,C$ estão no círculo de centro $A$ e raio $r$, então $AB=AC=r$ e $\triangle ABC$ é isósceles.
+\textbf{Enunciado:} C\'irculo de raio $r$ e centro $A$. $B$ e $C$ s\~ao pontos do c\'irculo. O que se pode afirmar sobre $\triangle ABC$?
 
+Como $B$ e $C$ pertencem ao c\'irculo: $m(AB) = r$ e $m(AC) = r$. Logo:
+$$m(AB) = m(AC) = r$$
+
+$\triangle ABC$ \'e \textbf{isc\'osceles} com os lados iguais sendo $\overline{AB}$ e $\overline{AC}$, e v\'ertice no centro $A$. $\blacksquare$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 32}
 \addcontentsline{toc}{section}{Quest\~ao 32}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Se $A$ está no círculo de centro $O$ e $\triangle OAB$ é equilátero, então $OB=OA=r$, logo $B$ também está no círculo.
+\textbf{Enunciado:} C\'irculo de raio $r$ e centro $O$. $A$ pertence ao c\'irculo. $\triangle OAB$ \'e equil\'atero. Qual a posi\c{c}\~ao de $B$?
 
+Como $m(OA) = r$ e $\triangle OAB$ \'e equil\'atero:
+$$m(OB) = m(OA) = r$$
+
+Portanto \textbf{$B$ pertence ao c\'irculo de centro $O$ e raio $r$}. $\blacksquare$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 33}
 \addcontentsline{toc}{section}{Quest\~ao 33}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Para círculos congruentes de centros $A,B$ e interseções $C,D$: $AC=CB=BD=DA=r$, então $ACBD$ é losango; em todo losango, diagonais se bissetam e são perpendiculares.
+\textbf{Enunciado:} Dois c\'irculos de mesmo raio $r$ e centros $A$, $B$ se intersectam em $C$ e $D$.
 
+Como $C$ e $D$ pertencem a ambos os c\'irculos: $m(AC) = m(BC) = m(AD) = m(BD) = r$.
+
+\textbf{Sobre $\triangle ABC$:} $m(AC) = m(BC) = r$, logo \'e \textbf{isc\'osceles}.
+
+\textbf{Sobre $\triangle ACD$:} $m(AC) = m(AD) = r$, logo \'e \textbf{isc\'osceles}.
+
+\textbf{Sobre o quadril\'atero $ACBD$:} Os quatro lados s\~ao:
+$$m(AC) = m(CB) = m(BD) = m(DA) = r$$
+
+Logo $ACBD$ \'e um \textbf{losango}. Suas diagonais $\overline{AB}$ e $\overline{CD}$ s\~ao perpendiculares e se bissetam mutuamente. $\blacksquare$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 34}
 \addcontentsline{toc}{section}{Quest\~ao 34}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Existe e é único $C$ entre $A$ e $B$ com $\frac{AC}{BC}=a>0$, dado por $x=\frac{aL}{1+a}$ em coordenadas $A=0,B=L$.
+\textbf{Enunciado:} Dado $\overline{AB}$, mostre que existe e \'e \'unico $C$ entre $A$ e $B$ com $\dfrac{m(AC)}{m(BC)} = a$, $a > 0$.
 
+\begin{proof}
+Fixe coordenadas com $A = 0$ e $B = L > 0$. Seja $C$ de coordenada $x \in (0, L)$. A condi\c{c}\~ao \'e:
+$$\frac{x}{L - x} = a$$
+
+Resolvendo: $x = a(L - x) \Rightarrow x(1+a) = aL \Rightarrow x = \dfrac{aL}{1+a}$.
+
+\textbf{Exist\^encia:} Como $a, L > 0$, temos $x > 0$. Al\'em disso, $x < L$ pois $\dfrac{a}{1+a} < 1$. Logo $C$ est\'a entre $A$ e $B$.
+
+\textbf{Unicidade:} A equa\c{c}\~ao linear $\dfrac{x}{L-x} = a$ tem exatamente uma solu\c{c}\~ao. Logo $C$ \'e \'unico.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 35}
 \addcontentsline{toc}{section}{Quest\~ao 35}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Método de aproximação do comprimento da circunferência por polígonos inscritos: $P_n=2rn\sin(\pi/n)\to2\pi r$.
+\textbf{M\'etodo por inscri\c{c}\~ao de pol\'igonos regulares:}
 
+Inscreva um pol\'igono regular de $n$ lados no c\'irculo de raio $r$. Cada lado tem comprimento:
+$$\ell_n = 2r\sin\!\left(\frac{\pi}{n}\right)$$
+
+O per\'imetro do pol\'igono inscrito \'e:
+$$P_n = n \cdot \ell_n = 2rn\sin\!\left(\frac{\pi}{n}\right)$$
+
+Quando $n \to \infty$:
+$$\lim_{n \to \infty} P_n = \lim_{n \to \infty} 2rn\sin\!\left(\frac{\pi}{n}\right) = 2\pi r$$
+
+que \'e o comprimento exato do c\'irculo. Exemplos (com $r = 1$, $2\pi \approx 6{,}2832$):
+
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+$n$ & $P_n$ & Erro \\
+\midrule
+6 & 6,0000 & $\approx 4{,}5\%$ \\
+12 & 6,2117 & $\approx 1{,}1\%$ \\
+96 & 6,2822 & $\approx 0{,}016\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 36}
 \addcontentsline{toc}{section}{Quest\~ao 36}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Segmento entre ponto interno e externo de um círculo intersecta o círculo (continuidade/valor intermediário).
+\textbf{Enunciado:} O segmento ligando um ponto fora de um c\'irculo a um ponto dentro tem um ponto em comum com o c\'irculo.
 
+\begin{proof}
+Seja $\mathcal{C}$ o c\'irculo de centro $O$ e raio $r$. Sejam $P$ (fora: $m(OP) > r$) e $Q$ (dentro: $m(OQ) < r$). Defina:
+$$f(t) = m(O,\, (1-t)P + tQ), \quad t \in [0,1]$$
+
+$f$ \'e cont\'inua com $f(0) = m(OP) > r$ e $f(1) = m(OQ) < r$. Pelo \textbf{Teorema do Valor Intermedi\'ario}, existe $t^* \in (0,1)$ tal que $f(t^*) = r$. O ponto $X(t^*) \in \overline{PQ}$ pertence ao c\'irculo. $\blacksquare$
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 37}
 \addcontentsline{toc}{section}{Quest\~ao 37}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Para elipse $\mathcal E=\{C:CA+CB=r\}$: interior $CA+CB<r$ (convexo e limitado), exterior $CA+CB>r$ (ilimitado, não convexo em geral).
+\textbf{Enunciado:} Estabelecer interior e exterior da elipse $\mathcal{E} = \{C : m(CA) + m(CB) = r\}$.
 
+\textbf{Regi\~ao interior:}
+$$\mathcal{E}^{\mathrm{int}} = \{C \in \pi : m(CA) + m(CB) < r\}$$
+Pontos cuja soma das dist\^ancias aos focos \'e estritamente menor que $r$. \'E um conjunto \textbf{convexo e limitado}.
+
+\textbf{Regi\~ao exterior:}
+$$\mathcal{E}^{\mathrm{ext}} = \{C \in \pi : m(CA) + m(CB) > r\}$$
+Pontos cuja soma das dist\^ancias \'e estritamente maior que $r$. \'E \textbf{ilimitado e n\~ao convexo}.
+
+O plano se decomp\~oe disjuntamente:
+$$\pi = \mathcal{E}^{\mathrm{int}} \cup \mathcal{E} \cup \mathcal{E}^{\mathrm{ext}} \qquad \blacksquare$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 38}
 \addcontentsline{toc}{section}{Quest\~ao 38}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Conjuntos finitos são limitados; segmentos são limitados; triângulo (como união de três segmentos) também é limitado.
+\textbf{Conjuntos finitos s\~ao limitados:}
 
+\begin{proof}
+Seja $M = \{P_1, \ldots, P_n\}$ e $O$ um ponto fixo. Seja $R = \max\{m(OP_i)\} + 1$. O c\'irculo de centro $O$ e raio $R$ cont\'em todos os $P_i$. Logo $M$ \'e limitado.
+\end{proof}
+
+\textbf{Segmentos s\~ao limitados:}
+
+\begin{proof}
+Seja $O$ o ponto m\'edio de $\overline{AB}$ e $R = \dfrac{m(AB)}{2}$. Todo $X \in \overline{AB}$ satisfaz $m(OX) \leq R$. Logo $\overline{AB}$ est\'a dentro do c\'irculo de centro $O$ e raio $R$.
+\end{proof}
+
+\textbf{Tri\^angulos s\~ao limitados:}
+
+$\triangle ABC = \overline{AB} \cup \overline{BC} \cup \overline{CA}$, uni\~ao finita de segmentos limitados. Pela Quest\~ao 39, a uni\~ao finita de limitados \'e limitada. $\blacksquare$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 39}
 \addcontentsline{toc}{section}{Quest\~ao 39}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-União finita de limitados é limitada (prova por majorante comum de distâncias a um ponto fixo).
+\textbf{Enunciado:} Prove que a uni\~ao finita de limitados \'e limitada.
 
+\begin{proof}
+Sejam $M_1, \ldots, M_n$ conjuntos limitados e $O$ um ponto fixo. Para cada $i$, existe $\mathcal{C}_i$ de centro $O_i$ e raio $R_i$ contendo $M_i$. Para todo $P \in M_i$, pela desigualdade triangular:
+$$m(OP) \leq m(OO_i) + m(O_iP) \leq m(OO_i) + R_i$$
+
+Defina $R = \max_{1 \leq i \leq n}\{m(OO_i) + R_i\} + 1$. Ent\~ao $m(OP) \leq R$ para todo $P \in \bigcup_i M_i$. Logo a uni\~ao \'e limitada.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 40}
 \addcontentsline{toc}{section}{Quest\~ao 40}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Dado ponto $P$ e conjunto limitado $M$, existe disco centrado em $P$ contendo $M$.
+\textbf{Enunciado:} Dado ponto $P$ e conjunto limitado $M$, existe disco centrado em $P$ que cont\'em $M$.
 
+\begin{proof}
+Como $M$ \'e limitado, existe $\mathcal{C}_0$ de centro $O$ e raio $R_0$ com $m(OX) \leq R_0$ para todo $X \in M$. Para todo $X \in M$, pela desigualdade triangular:
+$$m(PX) \leq m(PO) + m(OX) \leq m(PO) + R_0$$
+
+Logo $M \subset D(P, R)$ com $R = m(PO) + R_0$. $\blacksquare$
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Quest\~ao 41}
 \addcontentsline{toc}{section}{Quest\~ao 41}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Retas são ilimitadas: pela régua, há pontos a distância arbitrariamente grande de um ponto fixo na reta.
+\textbf{Enunciado:} Prove que as retas s\~ao conjuntos ilimitados.
+
+\begin{proof}
+Suponha por contradi\c{c}\~ao que uma reta $\ell$ seja limitada. Pela Quest\~ao 40, para qualquer $P \in \ell$, existe $R > 0$ tal que $m(PX) \leq R$ para todo $X \in \ell$.
+
+Pelo Axioma da R\'egua, existe biject\c{c}\~ao entre os pontos de $\ell$ e $\mathbb{R}$. Fixada a coordenada $p$ de $P$, o ponto $X_n$ de coordenada $p + n$ satisfaz:
+$$m(PX_n) = n$$
+
+Para $n > R$, temos $m(PX_n) = n > R$, contrariando $m(PX_n) \leq R$. Contradi\c{c}\~ao.
+
+Logo, toda reta \'e ilimitada. $\blacksquare$
+\end{proof}
 
 \end{document}
